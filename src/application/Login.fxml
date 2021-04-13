@@ -9,14 +9,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
       <AnchorPane layoutX="351.0" layoutY="38.0" prefHeight="328.0" prefWidth="314.0" style="-fx-background-color: #b32f25;">
          <children>
-            <TextField layoutX="43.0" layoutY="120.0" prefHeight="26.0" prefWidth="228.0" promptText="email" style="-fx-background-color: #8c241c;" />
-            <PasswordField layoutX="43.0" layoutY="170.0" prefHeight="26.0" prefWidth="228.0" promptText="password" style="-fx-background-color: #8c241c;" />
-            <Button layoutX="43.0" layoutY="222.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="228.0" style="-fx-background-color: #8c241c;" text="Button" textFill="WHITE" />
+            <TextField fx:id="emailfield" layoutX="43.0" layoutY="120.0" prefHeight="26.0" prefWidth="228.0" promptText="email" style="-fx-background-color: #8c241c;" />
+            <PasswordField fx:id="passfield" layoutX="43.0" layoutY="170.0" prefHeight="26.0" prefWidth="228.0" promptText="password" style="-fx-background-color: #8c241c;" />
+            <Button id="btnLogin" layoutX="43.0" layoutY="222.0" mnemonicParsing="false" onAction="#login" prefHeight="26.0" prefWidth="228.0" style="-fx-background-color: #8c241c;" text="Button" textFill="WHITE" />
             <Label layoutX="126.0" layoutY="63.0" prefHeight="26.0" prefWidth="62.0" text="Login" textFill="WHITE">
                <font>
                   <Font size="19.0" />

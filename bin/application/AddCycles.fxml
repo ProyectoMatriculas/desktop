@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CyclesController">
+   <children>
+      <ScrollPane layoutX="37.0" layoutY="30.0" prefHeight="332.0" prefWidth="525.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TableView prefHeight="332.0" prefWidth="525.0">
+                    <columns>
+                      <TableColumn prefWidth="524.0" text="C1" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Button layoutX="37.0" layoutY="383.0" mnemonicParsing="false" onAction="#search" text="Importar Ciclos" />
+      <Button layoutX="445.0" layoutY="383.0" mnemonicParsing="false" onAction="#search" text="Importar Alumnos" />
+   </children>
+</AnchorPane>

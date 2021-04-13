@@ -15,7 +15,7 @@ public class Main extends Application {
 			// FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Demo.fxml"));
 			Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 			// BorderPane root = new BorderPane();
-			Scene scene = new Scene(root,700,400);
+			Scene scene = new Scene(root);
 			// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setTitle("Login");
 			primaryStage.setScene(scene);
