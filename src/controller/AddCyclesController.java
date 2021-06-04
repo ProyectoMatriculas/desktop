@@ -2,14 +2,18 @@ package controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.FileChooser;
+import model.Course;
 import util.CSVUtils;
 
 public class AddCyclesController {
+	
+	private ArrayList<Course> coursesList;
 	
 	@FXML
 	private Button btnImportCourses;
@@ -22,7 +26,7 @@ public class AddCyclesController {
 		
 		String fileDir = selectCSVFile();
 		
-		CSVUtils.CourseCSVReader(fileDir);
+		coursesList = CSVUtils.CourseCSVReader(fileDir);
 		
 	}
 	

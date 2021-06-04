@@ -17,9 +17,9 @@ import model.Uf;
 
 public class CSVUtils {
 	
-	public static void CourseCSVReader(String fileDir) throws IOException, InterruptedException {
+	public static ArrayList<Course> CourseCSVReader(String fileDir) throws IOException, InterruptedException {
 		 		 
-		List<Course> coursesList = new ArrayList<Course>();
+		ArrayList<Course> coursesList = new ArrayList<Course>();
 		 
 		Course c = null;
 		
@@ -139,15 +139,17 @@ public class CSVUtils {
 //			
 //		}
 		
-		ArrayList<Course> testList = new ArrayList<Course>();
+		return coursesList;
 		
-		testList.add(coursesList.get(3));
-		testList.add(coursesList.get(12));
-		testList.add(coursesList.get(42));
+//		ArrayList<Course> testList = new ArrayList<Course>();
+//		
+//		testList.add(coursesList.get(3));
+//		testList.add(coursesList.get(12));
+//		testList.add(coursesList.get(42));
+//		
+//		String json = new Gson().toJson(testList);
 		
-		String json = new Gson().toJson(testList);
-		
-		RequestUtils.httpPostRequest("/courses/create", json);
+//		RequestUtils.httpPostRequest("/courses/create", json);
 		 
 	}
 	
