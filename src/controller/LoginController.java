@@ -1,121 +1,104 @@
-package application;
+package controller;
 
-import java.awt.Button;
-import java.io.BufferedReader;
-//import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-//import java.io.InputStreamReader;
-//import java.net.MalformedURLException;
-//import java.net.URL;
-//import java.net.URLConnection;
-import java.net.URL;
-import java.net.URLConnection;
 
-import javax.net.ssl.HttpsURLConnection;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
-//import javax.net.ssl.HttpsURLConnection;
-
+import application.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import util.RequestUtils;
 
-public class MainController {
+public class LoginController {
 	
-	static Stage loginStage;
+	final String endpoint = "/login/admin";
 	
-	private Stage stage;
-	private Scene scene;
-	private Parent root;
-	
-	@FXML
-	private TextField emailfield;
-	
-	@FXML
-	private PasswordField passfield;
-	
-	@FXML
-	private Button btnLogin;	
-	@FXML
-	private void login(ActionEvent event) {
-		
-		String res = "";
-		String password = this.passfield.getText();
-		// String password = "hola123";
-		// String email = "Alberto@gmail.com"; 				
-		 String email = emailfield.getText();
-		try {
-			URL url = new URL("https://morning-peak-25234.herokuapp.com/login/admin?email=" + email +"&password=" + password);
-			URLConnection conexion = (URLConnection) url.openConnection();
-			InputStream is = conexion.getInputStream();
-			BufferedReader br = new BufferedReader(new InputStreamReader(is));
-			char[] buffer = new char[2000];
-			int leido;
-			while ((leido = br.read(buffer)) > 0) {
-				res = new String(buffer, 0, leido);
-	         }
-			
-			JSONParser parser = new JSONParser();
-			JSONObject json = (JSONObject) parser.parse(res);
-			
-			String status = (String) json.get("status");
-	        
-			if(status.equals("OK")) {
-				try {
-					  System.out.println("Hola");
-					  root = FXMLLoader.load(getClass().getResource("AddCycles.fxml"));
-					  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-					  scene = new Scene(root);
-					  stage.setScene(scene);
-					  stage.show();
-					  
-				    } catch (IOException e) {
-				    	e.printStackTrace();
-				    }
-			} else {
-				Alert alert = new Alert(AlertType.ERROR);
-				alert.setTitle("Error");
-				alert.setHeaderText("Login failed");
-				alert.setContentText("El usuario o la contraseña son incorrectos");
+    @FXML
+    private TextField fieldEmail;
 
-				alert.showAndWait();
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		/*
-		  try {
-			  System.out.println("Hola");
-			  root = FXMLLoader.load(getClass().getResource("AddCycles.fxml"));
-			  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-			  scene = new Scene(root);
-			  stage.setScene(scene);
-			  stage.show();
-			  
-		    } catch (IOException e) {
-		    	e.printStackTrace();
-		    }
-		    */
-	}	
+    @FXML
+    private PasswordField fieldPassword;
+    
+    @FXML
+    private Button btnLogin;
+
+    @FXML
+    private Button btnExit;
+
+
+    @FXML
+    void exit(ActionEvent event) {
+    	
+    	System.exit(0);
+
+    }
+
+    @FXML
+    void login(ActionEvent event) throws IOException, InterruptedException {
+    	
+    	System.out.println(fieldEmail.getText());
+    	
+    	if (fieldEmail.getText().equalsIgnoreCase("") || fieldPassword.getText().equalsIgnoreCase("")) {
+    		
+    		Alert alert = new Alert(AlertType.ERROR, "There are empty fields");
+    		
+    		alert.showAndWait();
+    		
+    	} else {
+    		    			
+    		JsonObject userData = new JsonObject();
+    			
+    		userData.addProperty("email", fieldEmail.getText());
+    		userData.addProperty("password", fieldPassword.getText());
+    			
+    		String requestBody = new Gson().toJson(userData);
+    		
+    		String responseBody = RequestUtils.httpPostRequest(endpoint, requestBody);
+    		
+    		if (responseBody == "Error") {
+    			
+    			Alert alert = new Alert(AlertType.ERROR, "Invalid credentials");
+        		
+        		alert.show();
+        		
+        	} else {
+        		
+        		Main.token = responseBody;
+        		
+        		changeScene("AddCyclesView.fxml");
+        		
+        	}
+    		
+    	}
+
+    }
+    
+    void changeScene(String nextScene) throws IOException {
+    	
+    	Stage stage = new Stage();
 		
+		Parent root = FXMLLoader.load(LoginController.class.getResource("../view/" + nextScene));
+		
+		Scene scene = new Scene(root);
+		
+		stage.initStyle(StageStyle.DECORATED.UNDECORATED);
 	
+		stage.setScene(scene);
+		stage.show();
+		
+		btnLogin.getScene().getWindow().hide();
+    	
+    }
 
 }

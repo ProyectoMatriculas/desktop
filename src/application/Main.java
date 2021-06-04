@@ -1,31 +1,81 @@
 package application;
 	
+import java.io.IOException;
+
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class Main extends Application {
+	
+	Stage stage;
+	
+	public static String token;
+	
+	private double xOffset = 0;
+	private double yOffset = 0;
+	
 	@Override
-	public void start(Stage primaryStage) {
+	public void start(Stage stage) {
+		
+		this.stage = stage;
+		
+		token = "";
+		
 		try {
-			// FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Demo.fxml"));
-			Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-			// BorderPane root = new BorderPane();
-			Scene scene = new Scene(root);
-			// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setTitle("Login");
-			primaryStage.setScene(scene);
-			primaryStage.show();
+
+			launchLogin();
+			
 		} catch(Exception e) {
+			
 			e.printStackTrace();
+			
 		}
 	}
 	
 	public static void main(String[] args) {
+		
 		launch(args);
+		
+	}
+	
+	public void launchLogin() throws IOException {
+		
+		Parent root = FXMLLoader.load(Main.class.getResource("../view/LoginView.fxml"));
+		
+		Scene scene = new Scene(root);
+		
+		stage.initStyle(StageStyle.DECORATED.UNDECORATED);
+		
+		root.setOnMousePressed(new EventHandler<MouseEvent>()  {
+
+			@Override
+			public void handle(MouseEvent event) {
+
+				xOffset = event.getSceneX();
+				yOffset = event.getSceneY();
+				
+			}
+		});
+		
+		root.setOnMouseDragged(new EventHandler<MouseEvent>()  {
+
+			@Override
+			public void handle(MouseEvent event) {
+
+				stage.setX(event.getScreenX() - xOffset);
+				stage.setY(event.getScreenY() - yOffset);
+				
+			}
+		});
+
+		stage.setScene(scene);
+		stage.show();
+		
 	}
 }
