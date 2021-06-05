@@ -9,11 +9,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.FileChooser;
 import model.Course;
+import model.Student;
 import util.CSVUtils;
 
 public class AddCyclesController {
 	
 	private ArrayList<Course> coursesList;
+	private ArrayList<Student> studentsList;
 	
 	@FXML
 	private Button btnImportCourses;
@@ -35,7 +37,7 @@ public class AddCyclesController {
 		
 		String fileDir = selectCSVFile();
 		
-		CSVUtils.StudentsCSVReader(fileDir);
+		studentsList = CSVUtils.StudentsCSVReader(fileDir);
 		
 	}
 
