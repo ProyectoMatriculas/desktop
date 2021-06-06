@@ -18,5 +18,11 @@ public class Uf {
 		return NOM_UNITAT_FORMATIVA;
 		
 	}
+	
+	public String toString() {
+		
+		return NOM_UNITAT_FORMATIVA + " (" + DURADA_UNITAT_FORMATIVA + "h)";
+		
+	}
 
 }

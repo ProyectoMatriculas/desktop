@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+   <top>
+      <Label fx:id="lblMenu" prefHeight="53.0" prefWidth="757.0" style="-fx-background-color: #000000;" text="Menu" textFill="WHITE" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <Button fx:id="btnExit" mnemonicParsing="false" onAction="#exit" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: transparent;" text="X" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Button>
+         </graphic>
+      </Label>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="TOP_CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btnAddCourses" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#openAddCourses" prefHeight="136.0" prefWidth="632.0" style="-fx-background-color: #037ffc;" text="Importar Cursos" textFill="WHITE">
+               <font>
+                  <Font size="32.0" />
+               </font></Button>
+            <Button fx:id="btnAddAlumns" mnemonicParsing="false" onAction="#openAddAlumns" prefHeight="137.0" prefWidth="633.0" style="-fx-background-color: #037ffc;" text="Importar Alumnos" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font size="32.0" />
+               </font></Button>
+            <Button fx:id="btnViewAlumns" mnemonicParsing="false" onAction="#openViewAlumns" prefHeight="135.0" prefWidth="635.0" style="-fx-background-color: #037ffc;" text="Consultar Alumnos" textFill="WHITE" GridPane.rowIndex="3">
+               <font>
+                  <Font size="32.0" />
+               </font></Button>
+            <Button fx:id="btnViewCourses" mnemonicParsing="false" onAction="#openViewCourses" prefHeight="107.0" prefWidth="634.0" style="-fx-background-color: #037ffc;" text="Consultar Cursos" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

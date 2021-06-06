@@ -119,39 +119,7 @@ public class CSVUtils {
 		
 		csvReader.close();
 		
-//		for (int i = 0; i < coursesList.size(); i++) {
-//			
-//			System.out.println("Course " + (i+1) + " >>> " + coursesList.get(i).getName());
-//			
-//			List<Module> courseModules = coursesList.get(i).getModules();
-//			
-//			for (int j = 0; j < courseModules.size(); j++) {
-//				
-//				System.out.println("Module " + (i+1) + "." + (j+1) + " >>> " + courseModules.get(j).getModuleName());
-//				
-//				List<Uf> moduleUfs = courseModules.get(j).getModuleUfs();
-//				
-//				for (int k = 0; k < moduleUfs.size(); k++) {
-//					
-//					System.out.println("Uf " + (i+1) + "." + (j+1) + "." + (k+1) + " >>> " + moduleUfs.get(k).getUfName());
-//					
-//				}
-//				
-//			}
-//			
-//		}
-		
 		return coursesList;
-		
-//		ArrayList<Course> testList = new ArrayList<Course>();
-//		
-//		testList.add(coursesList.get(3));
-//		testList.add(coursesList.get(12));
-//		testList.add(coursesList.get(42));
-//		
-//		String json = new Gson().toJson(testList);
-		
-//		RequestUtils.httpPostRequest("/courses/create", json);
 		 
 	}
 	
@@ -240,6 +208,12 @@ public class CSVUtils {
 		}
 		
 		csvReader.close();
+		
+		String jsonString = new Gson().toJson(studentsList);
+		
+		System.out.println(jsonString);
+		
+		RequestUtils.httpPostRequest("/students/create", jsonString);
 		
 		return studentsList;
 		

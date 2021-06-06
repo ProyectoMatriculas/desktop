@@ -142,5 +142,243 @@ public class Student {
 		return nom;
 	}
 	
+	public String toString() {
+		
+		return nom + " " + primer_cognom + " " + segon_cognom;
+		
+	}
+
+	public String getConvocatoria() {
+		return convocatoria;
+	}
+
+	public String getCodi_solicitud() {
+		return codi_solicitud;
+	}
+
+	public String getTipus_solicitud() {
+		return tipus_solicitud;
+	}
+
+	public String getEstat_solicitud() {
+		return estat_solicitud;
+	}
+
+	public String getPrimer_cognom() {
+		return primer_cognom;
+	}
+
+	public String getSegon_cognom() {
+		return segon_cognom;
+	}
+
+	public String getIdentficacio_RALC() {
+		return identficacio_RALC;
+	}
+
+	public String getTipus_alumne() {
+		return tipus_alumne;
+	}
+
+	public String getCodi_centre_P1() {
+		return codi_centre_P1;
+	}
+
+	public String getNom_centre_P1() {
+		return nom_centre_P1;
+	}
+
+	public String getNaturalesa_centre_P1() {
+		return naturalesa_centre_P1;
+	}
+
+	public String getMunicipi_centre_P1() {
+		return municipi_centre_P1;
+	}
+
+	public String getSSTT_centre_P1() {
+		return SSTT_centre_P1;
+	}
+
+	public String getCodi_ensenyament_P1() {
+		return codi_ensenyament_P1;
+	}
+
+	public String getNom_ensenyament_P1() {
+		return nom_ensenyament_P1;
+	}
+
+	public String getCodi_modalitat() {
+		return codi_modalitat;
+	}
+
+	public String getModalitat() {
+		return modalitat;
+	}
+
+	public String getCurs_P1() {
+		return curs_P1;
+	}
+
+	public String getRegim_P1() {
+		return regim_P1;
+	}
+
+	public String getTorn_P1() {
+		return torn_P1;
+	}
+
+	public String getDNI() {
+		return DNI;
+	}
+
+	public String getNIE() {
+		return NIE;
+	}
+
+	public String getPASS() {
+		return PASS;
+	}
+
+	public String getTIS() {
+		return TIS;
+	}
+
+	public String getData_naixement() {
+		return data_naixement;
+	}
+
+	public String getSexe() {
+		return sexe;
+	}
+
+	public String getNacionalitat() {
+		return nacionalitat;
+	}
+
+	public String getPais_naixement() {
+		return pais_naixement;
+	}
+
+	public String getMunicipi_naixement() {
+		return municipi_naixement;
+	}
+
+	public String getTipus_via() {
+		return tipus_via;
+	}
+
+	public String getNom_via() {
+		return nom_via;
+	}
+
+	public String getNumero_via() {
+		return numero_via;
+	}
+
+	public String getAltres_dades() {
+		return altres_dades;
+	}
+
+	public String getProvincia_residencia() {
+		return provincia_residencia;
+	}
+
+	public String getMunicipi_residencia() {
+		return municipi_residencia;
+	}
+
+	public String getLocalitat_residencia() {
+		return localitat_residencia;
+	}
+
+	public String getCP() {
+		return CP;
+	}
+
+	public String getPais_residencia() {
+		return pais_residencia;
+	}
+
+	public String getTelefon() {
+		return telefon;
+	}
+
+	public String getCorreu_electronic() {
+		return correu_electronic;
+	}
+
+	public String getTipus_doc_tutor_1() {
+		return tipus_doc_tutor_1;
+	}
+
+	public String getNum_doc_tutor_1() {
+		return num_doc_tutor_1;
+	}
+
+	public String getNom_tutor_1() {
+		return nom_tutor_1;
+	}
+
+	public String getPrimer_cognom_tutor_1() {
+		return primer_cognom_tutor_1;
+	}
+
+	public String getSegon_cognom_tutor_1() {
+		return segon_cognom_tutor_1;
+	}
+
+	public String getTipus_doc_tutor_2() {
+		return tipus_doc_tutor_2;
+	}
+
+	public String getNum_doc_tutor_2() {
+		return num_doc_tutor_2;
+	}
+
+	public String getNom_tutor_2() {
+		return nom_tutor_2;
+	}
+
+	public String getPrimer_cognom_tutor_2() {
+		return primer_cognom_tutor_2;
+	}
+
+	public String getSegon_cognom_tutor_2() {
+		return segon_cognom_tutor_2;
+	}
+
+	public String getCodi_centre_proc() {
+		return codi_centre_proc;
+	}
+
+	public String getNom_centre_proc() {
+		return nom_centre_proc;
+	}
+
+	public String getCodi_ensenyament_proc() {
+		return codi_ensenyament_proc;
+	}
+
+	public String getNom_ensenyament_proc() {
+		return nom_ensenyament_proc;
+	}
+
+	public String getCurs_proc() {
+		return curs_proc;
+	}
+
+	public String getLlengua_enten() {
+		return llengua_enten;
+	}
+
+	public String getReligio() {
+		return religio;
+	}
+
+	public String getCentre_assignat() {
+		return centre_assignat;
+	}
+	
 }
 

@@ -42,5 +42,11 @@ public class Module {
 		
 	}
 	
+	public String toString() {
+		
+		return NOM_MODUL;
+		
+	}
+	
 
 }

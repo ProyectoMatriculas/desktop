@@ -76,7 +76,7 @@ public class LoginController {
         		
         		Main.token = responseBody;
         		
-        		changeScene("AddCyclesView.fxml");
+        		changeScene("MenuView.fxml");
         		
         	}
     		

@@ -60,9 +60,55 @@ public class Course {
 	public void setINDICADOR_PROJECTE(String indProjecte) {
 		INDICADOR_PROJECTE = indProjecte;
 	}
+
+	public String getCODI_CICLE_FORMATIU() {
+		return CODI_CICLE_FORMATIU;
+	}
+
+	public String getNOM_CICLE_FORMATIU() {
+		return NOM_CICLE_FORMATIU;
+	}
+
+	public String getCODI_ADAPTACIO_CURRICULAR() {
+		return CODI_ADAPTACIO_CURRICULAR;
+	}
+
+	public String getHORES_CICLE_FORMATIU() {
+		return HORES_CICLE_FORMATIU;
+	}
+
+	public String getDATA_INICI_CICLE_FORMATIU() {
+		return DATA_INICI_CICLE_FORMATIU;
+	}
+
+	public String getDATA_FI_CICLE_FORMATIU() {
+		return DATA_FI_CICLE_FORMATIU;
+	}
+
+	public List<Module> getMODULS_CICLE_FORMATIU() {
+		return MODULS_CICLE_FORMATIU;
+	}
+
+	public String getINDICADOR_FCT() {
+		return INDICADOR_FCT;
+	}
+
+	public String getINDICADOR_SINTESIS() {
+		return INDICADOR_SINTESIS;
+	}
+
+	public String getINDICADOR_IDIOMA() {
+		return INDICADOR_IDIOMA;
+	}
+
+	public String getINDICADOR_PROJECTE() {
+		return INDICADOR_PROJECTE;
+	}	
 	
-	
-	
-	
+	public String toString() {
+		
+		return CODI_CICLE_FORMATIU + "    " + NOM_CICLE_FORMATIU;
+		
+	}
 
 }

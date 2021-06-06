@@ -12,8 +12,8 @@ import application.Main;
 
 public class RequestUtils {
 	
-	public static String api = "https://matriculas-api.herokuapp.com/";
-//	public static String api = "http://localhost:5000";
+//	public static String api = "https://matriculas-api.herokuapp.com";
+	public static String api = "http://localhost:5000";
 	
 	public static String httpPostRequest(String endPoint, String jsonData) throws IOException, InterruptedException {
 		
@@ -29,8 +29,6 @@ public class RequestUtils {
 				.build();
 		
 		HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
-		
-		System.out.println(response.body());
 		
 		if (response.statusCode() == 200) {
 			
@@ -51,6 +49,33 @@ public class RequestUtils {
 		HttpClient client = HttpClient.newHttpClient();
 		
 		HttpRequest request = HttpRequest.newBuilder(uri)
+				.header("access-token", Main.token)
+				.build();
+		
+		HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+		
+		if (response.statusCode() == 200) {
+			
+			return response.body();
+			
+		} else {
+			
+			return "Error";
+			
+		}
+		
+	}
+	
+	public static String getByParameterRequest(String endpoint, String parameter, String value) throws IOException, InterruptedException {
+		
+		String uriWithSpaces = api + endpoint + "/getBy" + parameter + "?" + parameter + "=" + value;
+		
+		URI uri = URI.create(uriWithSpaces.toString().replace(" ", "%20"));
+		
+		HttpClient client = HttpClient.newHttpClient();
+		
+		HttpRequest request = HttpRequest.newBuilder(uri)
+				.header("access-token", Main.token)
 				.build();
 		
 		HttpResponse<String> response = client.send(request, BodyHandlers.ofString());

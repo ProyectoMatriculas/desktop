@@ -1,6 +1,7 @@
 package application;
 	
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -11,11 +12,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import model.Course;
+
 public class Main extends Application {
 	
-	Stage stage;
-	
 	public static String token;
+	
+	Stage stage;	
 	
 	private double xOffset = 0;
 	private double yOffset = 0;
