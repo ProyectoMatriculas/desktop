@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="776.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfileRequirementsFormController">
+   <children>
+      <Label fx:id="lblMenu" prefHeight="64.0" prefWidth="739.0" style="-fx-background-color: #000000;" text="Menu" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <Button fx:id="btnExit" mnemonicParsing="false" onAction="#exit" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: transparent;" text="X" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Button>
+         </graphic>
+      </Label>
+      <Label layoutX="140.0" layoutY="83.0" text="Formulario creacion de perfiles de requisitos" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="148.0" layoutY="140.0" prefHeight="25.0" prefWidth="73.0" text="Nombre">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtFieldName" layoutX="354.0" layoutY="140.0" prefHeight="25.0" prefWidth="246.0" />
+      <Label layoutX="148.0" layoutY="219.0" text="Descripcion">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="txtAreaDescription" layoutX="354.0" layoutY="204.0" prefHeight="167.0" prefWidth="246.0" />
+      <Label layoutX="148.0" layoutY="390.0" text="Requisitos Dinamicos">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="354.0" layoutY="384.0" prefHeight="306.0" prefWidth="246.0">
+         <content>
+            <VBox fx:id="vboxReqList" prefHeight="304.0" prefWidth="244.0" />
+         </content>
+      </ScrollPane>
+      <Button fx:id="btnAddRequirements" layoutX="148.0" layoutY="431.0" mnemonicParsing="false" onAction="#addTextFields" text="Anadir 3 nuevos campos">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="btnSend" layoutX="354.0" layoutY="706.0" mnemonicParsing="false" onAction="#send" prefHeight="25.0" prefWidth="246.0" text="Enviar">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

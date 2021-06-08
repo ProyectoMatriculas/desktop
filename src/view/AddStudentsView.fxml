@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="501.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddStudentsController">
+   <children>
+      <ScrollPane layoutX="25.0" layoutY="65.0" prefHeight="359.0" prefWidth="548.0">
+         <content>
+            <TableView fx:id="tableid" prefHeight="344.0" prefWidth="9417.0">
+              <columns>
+                <TableColumn fx:id="convocatoria" prefWidth="150.0" text="Convocatoria" />
+                <TableColumn fx:id="codi_solicitud" prefWidth="150.0" text="Codigo Solicitud" />
+                  <TableColumn fx:id="tipus_solicitud" prefWidth="150.0" text="Tipo Soliciutd" />
+                  <TableColumn fx:id="estat_solicitud" prefWidth="150.0" text="Estado Solicitud" />
+                  <TableColumn fx:id="nom" prefWidth="150.0" text="Nombre" />
+                  <TableColumn fx:id="primer_cognom" prefWidth="150.0" text="Apellido" />
+                  <TableColumn fx:id="segon_cognom" prefWidth="150.0" text="Apellido2" />
+                  <TableColumn fx:id="identficacio_RALC" prefWidth="150.0" text="RALC" />
+                  <TableColumn fx:id="tipus_alumne" prefWidth="150.0" text="TipoAlumno" />
+                  <TableColumn fx:id="codi_centre_P1" prefWidth="150.0" text="Codigo Centro" />
+                  <TableColumn fx:id="nom_centre_P1" prefWidth="150.0" text="Nombre Centro" />
+                  <TableColumn fx:id="naturalesa_centre_P1" prefWidth="150.0" text="Naturaleza Centro" />
+                  <TableColumn fx:id="municipi_centre_P1" prefWidth="150.0" text="Municipio" />
+                  <TableColumn fx:id="SSTT_centre_P1" prefWidth="150.0" text="SSTT" />
+                  <TableColumn fx:id="codi_ensenyament_P1" prefWidth="150.0" text="Codigo Enseñanza" />
+                  <TableColumn fx:id="nom_ensenyament_P1" prefWidth="150.0" text="Nombre Enseñanza" />
+                  <TableColumn fx:id="codi_modalitat" prefWidth="150.0" text="Codigo Modalidad" />
+                  <TableColumn fx:id="modalitat" prefWidth="150.0" text="Modalidad" />
+                  <TableColumn fx:id="curs_P1" prefWidth="150.0" text="Curso" />
+                  <TableColumn fx:id="regim_P1" prefWidth="150.0" text="Regimen" />
+                  <TableColumn fx:id="torn_P1" prefWidth="150.0" text="Turno" />
+                  <TableColumn fx:id="DNI" prefWidth="150.0" text="DNI" />
+                  <TableColumn fx:id="NIE" prefWidth="150.0" text="NIE" />
+                  <TableColumn fx:id="PASS" prefWidth="150.0" text="PASS" />
+                  <TableColumn fx:id="TIS" prefWidth="150.0" text="TIS" />
+                  <TableColumn fx:id="data_naixement" prefWidth="150.0" text="Fecha Nacimiento" />
+                  <TableColumn fx:id="sexe" prefWidth="150.0" text="Sexo" />
+                  <TableColumn fx:id="nacionalitat" prefWidth="150.0" text="Nacionalidad" />
+                  <TableColumn fx:id="pais_naixement" prefWidth="150.0" text="Pais Nacimiento" />
+                  <TableColumn fx:id="municipi_naixement" prefWidth="150.0" text="Municipio Nacimiento" />
+                  <TableColumn fx:id="tipus_via" prefWidth="150.0" text="Tipo Via" />
+                  <TableColumn fx:id="nom_via" prefWidth="150.0" text="Nombre Via" />
+                  <TableColumn fx:id="numero_via" prefWidth="150.0" text="Numero Via" />
+                  <TableColumn fx:id="altres_dades" prefWidth="150.0" text="Otros Datos" />
+                  <TableColumn fx:id="provincia_residencia" prefWidth="150.0" text="Provincia Residencia" />
+                  <TableColumn fx:id="municipi_residencia" prefWidth="150.0" text="Municipio Residencia" />
+                  <TableColumn fx:id="localitat_residencia" prefWidth="150.0" text="Localidad Residencia" />
+                  <TableColumn fx:id="CP" prefWidth="150.0" text="CP" />
+                  <TableColumn fx:id="pais_residencia" prefWidth="150.0" text="Pais Residencia" />
+                  <TableColumn fx:id="telefon" prefWidth="150.0" text="Telefono" />
+                  <TableColumn fx:id="correu_electronic" prefWidth="150.0" text="Correo Electronico" />
+                  <TableColumn fx:id="tipus_doc_tutor_1" prefWidth="150.0" text="Tipo de Documento Tutor" />
+                  <TableColumn fx:id="num_doc_tutor_1" prefWidth="150.0" text="Numero Documento Tutor" />
+                  <TableColumn fx:id="nom_tutor_1" prefWidth="150.0" text="Nombre Tutor" />
+                  <TableColumn fx:id="primer_cognom_tutor_1" prefWidth="150.0" text="Apellido Tutor" />
+                  <TableColumn fx:id="segon_cognom_tutor_1" prefWidth="150.0" text="Segundo Apellido Tutor" />
+                  <TableColumn fx:id="tipus_doc_tutor_2" prefWidth="150.0" text="Tipo de Documento Tutor 2" />
+                  <TableColumn fx:id="num_doc_tutor_2" prefWidth="150.0" text="Numero de Documento Tutor 2" />
+                  <TableColumn fx:id="nom_tutor_2" prefWidth="150.0" text="Nombre Tutor 2" />
+                  <TableColumn fx:id="primer_cognom_tutor_2" prefWidth="150.0" text="Apellido Tutor 2" />
+                  <TableColumn fx:id="segon_cognom_tutor_2" prefWidth="150.0" text="Segundo Apellido Tutor 2" />
+                  <TableColumn fx:id="codi_centre_proc" prefWidth="150.0" text="Codigo Centro Procedencia" />
+                  <TableColumn fx:id="nom_centre_proc" prefWidth="150.0" text="Nombre Centro Procedencia" />
+                  <TableColumn fx:id="codi_ensenyament_proc" prefWidth="150.0" text="Codigo de Enseñamiento Procedencia" />
+                  <TableColumn fx:id="nom_ensenyament_proc" prefWidth="150.0" text="Nombre de Enseñamiento Procedencia" />
+                  <TableColumn fx:id="curs_proc" prefWidth="150.0" text="Curso de Procedencia" />
+                  <TableColumn fx:id="llengua_enten" prefWidth="150.0" text="Lenguas Entendidas" />
+                  <TableColumn fx:id="religio" prefWidth="150.0" text="Religion" />
+                  <TableColumn fx:id="centre_assignat" prefWidth="150.0" text="Centro Asignado" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <Button fx:id="btnImportAlumns" layoutX="25.0" layoutY="450.0" mnemonicParsing="false" onAction="#importAlumns" text="Importar Alumnos" />
+      <Button fx:id="btnSend" layoutX="284.0" layoutY="450.0" mnemonicParsing="false" onAction="#addAlumns" text="Enviar" />
+      <Button fx:id="btnBack" layoutX="521.0" layoutY="450.0" mnemonicParsing="false" onAction="#backMenu" text="Volver" />
+      <Button fx:id="btnExit" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#exit" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: transparent;" text="X" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblMenu" prefHeight="54.0" prefWidth="618.0" style="-fx-background-color: #000000;" text="Menu" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <Button fx:id="btnExit" mnemonicParsing="false" onAction="#exit" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: transparent;" text="X" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Button>
+         </graphic>
+      </Label>
+   </children>
+</AnchorPane>
