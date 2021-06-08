@@ -104,9 +104,21 @@ public class AddCoursesController {
 		
 		String responseBody = RequestUtils.httpPostRequest("/courses/create", jsonString);
 		
-		Alert alert = new Alert (AlertType.INFORMATION, responseBody);
+		if (responseBody.equals("Error")) {
+			
+			Alert alert = new Alert (AlertType.INFORMATION, "No se han insertado cursos, ya estaban agregados");
+			
+			alert.show();
+			
+		} else {
+			
+			Alert alert = new Alert (AlertType.INFORMATION, "Cursos insertados correctamente");
+			
+			alert.show();
+			
+		}
 		
-		alert.show();
+		
 		
 	}
 	

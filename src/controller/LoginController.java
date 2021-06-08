@@ -47,8 +47,6 @@ public class LoginController {
     @FXML
     void login(ActionEvent event) throws IOException, InterruptedException {
     	
-    	System.out.println(fieldEmail.getText());
-    	
     	if (fieldEmail.getText().equalsIgnoreCase("") || fieldPassword.getText().equalsIgnoreCase("")) {
     		
     		Alert alert = new Alert(AlertType.ERROR, "There are empty fields");

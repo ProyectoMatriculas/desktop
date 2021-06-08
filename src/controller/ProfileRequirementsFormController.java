@@ -13,8 +13,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -62,7 +64,7 @@ public class ProfileRequirementsFormController implements Initializable {
 	}
 	
 	@FXML
-	void send (ActionEvent event) {
+	void send (ActionEvent event) throws IOException, InterruptedException {
 		String name = txtFieldName.getText();
 		String description = txtAreaDescription.getText();
 		ArrayList<String> listRequirements = new ArrayList<String>();
@@ -77,16 +79,22 @@ public class ProfileRequirementsFormController implements Initializable {
 		
 		String jsonString = new Gson().toJson(rp);
 		
-		System.out.println(jsonString);
-		try {
-			String responseBody = RequestUtils.httpPostRequest("/requirements/create", jsonString);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		String responseBody = RequestUtils.httpPostRequest("/requirements/create", jsonString);
+			
+		if (responseBody.equals("Error")) {
+				
+			Alert alert = new Alert (AlertType.INFORMATION, "No se ha insertado el perfil de requerimientos, ya habia uno con ese nombre");
+				
+			alert.show();
+				
+		} else {
+				
+			Alert alert = new Alert (AlertType.INFORMATION, "Perfil de requerimientos insertado correctamente");
+				
+			alert.show();
+				
 		}
+		
 	}	
 	
 	@FXML

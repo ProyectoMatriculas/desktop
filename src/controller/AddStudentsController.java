@@ -19,10 +19,12 @@ import model.Course;
 import model.Student;
 import util.CSVUtils;
 import util.RequestUtils;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class AddStudentsController {
@@ -318,7 +320,21 @@ public class AddStudentsController {
 		
 		String jsonString = new Gson().toJson(studentsToAdd);
 		
-		RequestUtils.httpPostRequest("/students/create", jsonString);
+		String responseBody = RequestUtils.httpPostRequest("/students/create", jsonString);
+		
+		if (responseBody.equals("Error")) {
+			
+			Alert alert = new Alert (AlertType.INFORMATION, "No se han agregado alumnos, ya estaban introducidos");
+			
+			alert.show();
+			
+		} else {
+			
+			Alert alert = new Alert (AlertType.INFORMATION, "Alumnos agregados correctamente");
+			
+			alert.show();
+			
+		}
 		
 	}
 	
