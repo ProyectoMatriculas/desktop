@@ -12,8 +12,8 @@ import application.Main;
 
 public class RequestUtils {
 	
-//	public static String api = "https://matriculas-api.herokuapp.com";
-	public static String api = "http://localhost:5000";
+	public static String api = "https://matriculas-api.herokuapp.com";
+//	public static String api = "http://localhost:5000";
 	
 	public static String httpPostRequest(String endPoint, String jsonData) throws IOException, InterruptedException {
 		
@@ -29,6 +29,8 @@ public class RequestUtils {
 				.build();
 		
 		HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+		
+		System.out.println(response.body());
 		
 		if (response.statusCode() == 200) {
 			

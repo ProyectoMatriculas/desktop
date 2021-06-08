@@ -31,6 +31,9 @@ public class MenuController {
 
     @FXML
     private Button btnViewCourses;
+    
+    @FXML
+    private Button btnRequirements;
 	
 	@FXML
 	void openAddCourses(ActionEvent event) throws IOException, InterruptedException {
@@ -50,6 +53,11 @@ public class MenuController {
 	@FXML
 	void openViewCourses(ActionEvent event) throws IOException, InterruptedException {
 		changeScene("ConsultCoursesView.fxml");
+	}
+	
+	@FXML
+	void openAddRequirements(ActionEvent event) throws IOException, InterruptedException {
+		changeScene("ProfileRequirementsFormView.fxml");
 	}
 	
 	@FXML
